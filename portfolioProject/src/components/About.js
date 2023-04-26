@@ -73,7 +73,17 @@ const About = () => {
               </div>
             </div>
             <div className="flex gap-x-8 items-center">
-              <button className="btn btn-lg transition-all duration-400">Contato</button>
+              <button
+                className="btn btn-lg transition-all duration-400"
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/55085996056772?text=Ol%C3%A1%2C%20eu%20vim%20do%20seu%20site%20portfólio%20e%20gostaria de trocar uma ideia!",
+                    "_blank"
+                  )
+                }
+              >
+                Contato
+              </button>
               <Link to="work" activeClass="active" smooth={true} spy={true}>
                 <a href="work" className="text-gradient btn-link">
                   Meu Portfólio
