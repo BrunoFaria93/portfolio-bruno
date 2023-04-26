@@ -9,6 +9,7 @@ const services = [
     date: "07/21 - 07/22",
     description: "Curso de 2.000 horas de Desenvolvimento Full Stack que abrange as tecnologias Front End e Back End além de soft skills disponíveis para o mercado de trabalho. Entre as linguagens e tecnologias aprendidas, estão HTML5, CSS3, JavaScript (ES6 +), React, Redux, Python (Django e Flask) e SQL.",
     link: "https://kenzie.com.br/quem-somos?utm_medium=google-ads&hsa_ad=648094279880&hsa_acc=2166776305&hsa_src=g&gclid=CjwKCAjwl6OiBhA2EiwAuUwWZXPav0L4a_ripnYYNEQFHrLHHQVJYe4L1DCduoVjn9s-qqLOkN2SxBoCopEQAvD_BwE&hsa_grp=137371409172&utm_term=kenzie%20academy&utm_source=adwords&gad=1&hsa_cam=15853756022&utm_campaign=INSC-PER-2022-TERMOS-MARCA-SEARCH"
+  },
   {
     name: "Uninassau - Análise e Desenvolvimento de Sistemas",
     date: "02/23 - atualmente",
