@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { Link } from "react-scroll";
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(true);
@@ -48,9 +49,11 @@ const About = () => {
               HTML | CSS | JS | TS | GIT | Redux | Context API | Jest | Cypress
               | Styled Components | Material UI | Chakra UI | SCRUM | Tailwind |
               NextJs
+              <br />
+              E-mail: brunofaria7.dev@gmail.com
             </p>
-            <div className="flex justify-start items-center gap-x-6 lg:gap-x-10 mb-12 mt-8">
-              <div className="flex flex-col justify-center items-center">
+            <div className="flex justify-start items-center gap-x-6 lg:gap-x-10 mb-8">
+              <div className="flex flex-col justify-center items-center h-auto">
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
                   {inView ? <CountUp start={0} end={13} duration={3} /> : <></>}
                 </div>
@@ -59,7 +62,7 @@ const About = () => {
                   Experiência
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col justify-center h-auto items-center">
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
                   {inView ? <CountUp start={0} end={2} duration={3} /> : <></>}
                 </div>
@@ -71,9 +74,11 @@ const About = () => {
             </div>
             <div className="flex gap-x-8 items-center">
               <button className="btn btn-lg transition-all duration-400">Contato</button>
-              <a href="#" className="text-gradient btn-link">
-                Meu Portfólio
-              </a>
+              <Link to="work" activeClass="active" smooth={true} spy={true}>
+                <a href="work" className="text-gradient btn-link">
+                  Meu Portfólio
+                </a>
+              </Link>
             </div>
           </motion.div>
         </div>

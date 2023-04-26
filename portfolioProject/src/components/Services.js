@@ -5,20 +5,16 @@ import { fadeIn } from "../variants";
 import { Link } from "react-scroll";
 const services = [
   {
-    name: "UI/UX Design",
-    description: "Processo de criar uma interface e experiência de usuário intuitiva, agradável e eficiente para um produto digital.",
-    link: "https://blog.cubos.academy/ux-ui-design-guia-completo/#:~:text=menus%20e%20tipografia.-,O%20objetivo%20do%20UI%20design%20é%20criar%20uma%20interface%20visual,uso%20contínuo%20e%20a%20fidelização.",
-  },
+    name: "Kenzie Academy - Desenvolvedor Web Fullstack",
+    date: "07/21 - 07/22",
+    description: "Curso de 2.000 horas de Desenvolvimento Full Stack que abrange as tecnologias Front End e Back End além de soft skills disponíveis para o mercado de trabalho. Entre as linguagens e tecnologias aprendidas, estão HTML5, CSS3, JavaScript (ES6 +), React, Redux, Python (Django e Flask) e SQL.",
+    link: "https://kenzie.com.br/quem-somos?utm_medium=google-ads&hsa_ad=648094279880&hsa_acc=2166776305&hsa_src=g&gclid=CjwKCAjwl6OiBhA2EiwAuUwWZXPav0L4a_ripnYYNEQFHrLHHQVJYe4L1DCduoVjn9s-qqLOkN2SxBoCopEQAvD_BwE&hsa_grp=137371409172&utm_term=kenzie%20academy&utm_source=adwords&gad=1&hsa_cam=15853756022&utm_campaign=INSC-PER-2022-TERMOS-MARCA-SEARCH"
   {
-    name: "Desenvolvimento Web Front-end",
-    description: "Criar a interface visual e interativa de um website, responsável por garantir que o design seja atraente e intuitivo para o usuário final.",
-    link: "https://ebaconline.com.br/blog/desenvolvedor-front-end-o-que-faz#:~:text=O%20profissional%20desenvolvedor%20front-end,como%20HTML%2C%20CSS%20e%20JavaScript.",
-  },
-  {
-    name: "SEO",
-    description: "Conjunto de técnicas e estratégias que visam melhorar o posicionamento de um site em motores de busca, como o Google",
-    link: "https://resultadosdigitais.com.br/marketing/o-que-e-seo/",
-  },
+    name: "Uninassau - Análise e Desenvolvimento de Sistemas",
+    date: "02/23 - atualmente",
+    description: "Com a graduação em Análise e Desenvolvimento de Sistemas da UNINASSAU você estará apto para concorrer as melhores oportunidades que o mercado de Tecnologia da Informação oferece. Com essa formação você vai poder atuar em profissões como Engenheiro Front-End, Desenvolvedor de Java, Cientista de dados, Gerente de Produto e Engenheiro de DevOps.",
+    link: "https://graduacao.uninassau.digital/nossos-cursos/analise-e-desenvolvimento-de-sistemas/85/60/2?utm_source=google&utm_medium=search&utm_campaign=um-uninassau-graduacao_ead_20221-conversao-google-&utm_content=um-uninassau-graduacao_ead_20221-conversao-google--search-generico_-interesses-&utm_term=um-uninassau-graduacao_ead_20221-conversao-google--search-generico_-interesses--na--&gad=1&gclid=CjwKCAjwl6OiBhA2EiwAuUwWZXK-KEdGd-6yBpOdfiRSEPObyfgVnOt8hY-NksLXEpno9mjDhVid1BoChosQAvD_BwE",
+  }
 ];
 
 const Services = () => {
@@ -36,15 +32,15 @@ const Services = () => {
             }}
             className="flex-1 mb-12 lg:mb-0"
           >
-            <h2 className="h2 text-accent mb-6">O que eu faço?</h2>
-            <h3 className="h3 max-w-[455px] mb-16">
-              Programdor Front-end com mais de 1 ano de experiência.
-            </h3>
-            <Link to="work" activeClass="active" smooth={true} spy={true}>
+            <h2 className="h2 text-accent mb-2">Formação</h2>
+            {/* <h3 className="h3 max-w-[455px] mb-8">
+              Programador Front-end com mais de 1 ano de experiência.
+            </h3> */}
+            {/* <Link to="work" activeClass="active" smooth={true} spy={true}>
                 <a href="work" className="btn p-5">
                   Veja meu trabalho
                 </a>
-              </Link>
+              </Link> */}
           </motion.div>
           <motion.div
             variants={fadeIn("left", 0.5)}
@@ -58,11 +54,11 @@ const Services = () => {
           >
             <div className="">
               {services.map((service, index) => {
-                const { name, description, link } = service;
+                const { name, date, description, link } = service;
                 return (
                   <div
                     key={index}
-                    className="border-b border-white/20 h-[146px] mb-[38px] flex"
+                    className="border-b border-white/20 pb-5 h-auto mb-[38px] flex"
                   >
                     <div className="max-w-[476px]">
                       <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-6">
@@ -79,9 +75,10 @@ const Services = () => {
                       >
                         <BsArrowUpRight />
                       </a>
-                      <a href={link} className="text-gradient text-sm">
-                        Leia mais
-                      </a>
+                      <span 
+                       className="text-gradient text-sm">
+                        {date}
+                      </span>
                     </div>
                   </div>
                 );

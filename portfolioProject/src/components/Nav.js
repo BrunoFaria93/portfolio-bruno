@@ -4,6 +4,7 @@ import {
   BsClipboardData,
   BsBriefcase,
   BsChatSquare,
+  BsBook,
   BsChatSquareText,
 } from "react-icons/bs";
 
@@ -43,7 +44,7 @@ const Nav = () => {
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
           >
-            <BsClipboardData />
+            <BsBook />
           </Link>
           <Link
             to="work"
@@ -52,7 +53,7 @@ const Nav = () => {
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
           >
-            <BsBriefcase />
+            <BsClipboardData />
           </Link>
           <Link
             to="contact"
@@ -61,7 +62,7 @@ const Nav = () => {
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
           >
-            <BsChatSquareText />
+            <BsBriefcase />
           </Link>
         </div>
       </div>
