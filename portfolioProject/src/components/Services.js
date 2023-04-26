@@ -2,22 +2,22 @@ import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-
+import { Link } from "react-scroll";
 const services = [
   {
     name: "UI/UX Design",
-    description: "nasjnajsnjsn sanjsnj njsn jsa jsnaj nsj",
-    link: "Leia mais",
+    description: "Processo de criar uma interface e experiência de usuário intuitiva, agradável e eficiente para um produto digital.",
+    link: "https://blog.cubos.academy/ux-ui-design-guia-completo/#:~:text=menus%20e%20tipografia.-,O%20objetivo%20do%20UI%20design%20é%20criar%20uma%20interface%20visual,uso%20contínuo%20e%20a%20fidelização.",
   },
   {
-    name: "Desenvolvimento",
-    description: "nasjnajsnjsn sanjsnj njsn jsa jsnaj nsj",
-    link: "Leia mais",
+    name: "Desenvolvimento Web Front-end",
+    description: "Criar a interface visual e interativa de um website, responsável por garantir que o design seja atraente e intuitivo para o usuário final.",
+    link: "https://ebaconline.com.br/blog/desenvolvedor-front-end-o-que-faz#:~:text=O%20profissional%20desenvolvedor%20front-end,como%20HTML%2C%20CSS%20e%20JavaScript.",
   },
   {
     name: "SEO",
-    description: "nasjnajsnjsn sanjsnj njsn jsa jsnaj nsj",
-    link: "Leia mais",
+    description: "Conjunto de técnicas e estratégias que visam melhorar o posicionamento de um site em motores de busca, como o Google",
+    link: "https://resultadosdigitais.com.br/marketing/o-que-e-seo/",
   },
 ];
 
@@ -40,7 +40,11 @@ const Services = () => {
             <h3 className="h3 max-w-[455px] mb-16">
               Programdor Front-end com mais de 1 ano de experiência.
             </h3>
-            <button className="btn btn-sm">Veja meu trabalho</button>
+            <Link to="work" activeClass="active" smooth={true} spy={true}>
+                <a href="work" className="btn p-5">
+                  Veja meu trabalho
+                </a>
+              </Link>
           </motion.div>
           <motion.div
             variants={fadeIn("left", 0.5)}
@@ -70,13 +74,13 @@ const Services = () => {
                     </div>
                     <div className="flex flex-col flex-1 items-end">
                       <a
-                        href="#"
+                        href={link}
                         className="btn w-9 h-9 mb-[42px] flex justify-center items-center"
                       >
                         <BsArrowUpRight />
                       </a>
-                      <a href="#" className="text-gradient text-sm">
-                        {link}
+                      <a href={link} className="text-gradient text-sm">
+                        Leia mais
                       </a>
                     </div>
                   </div>

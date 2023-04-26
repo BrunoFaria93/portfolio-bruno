@@ -49,7 +49,7 @@ const About = () => {
               | Styled Components | Material UI | Chakra UI | SCRUM | Tailwind |
               NextJs
             </p>
-            <div className="flex justify-start items-center gap-x-6 lg:gap-x-10 mb-12 mt-5">
+            <div className="flex justify-start items-center gap-x-6 lg:gap-x-10 mb-12 mt-8">
               <div className="flex flex-col justify-center items-center">
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
                   {inView ? <CountUp start={0} end={13} duration={3} /> : <></>}

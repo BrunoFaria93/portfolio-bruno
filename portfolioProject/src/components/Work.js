@@ -25,24 +25,30 @@ const Work = () => {
                 Portfólio de Projetos <br />
               </h2>
               <p className="max-w-sm mb-16">
-                kmsamsk sakm akmsk mskam kmask maksm kmska maksm kamsakm assets
-                sakm ksamsmkam sksk maksm ksamksa msm kms makm aksm akmas kamsm
+                Clique em uma das imagens abaixo para abrir projetos que fiz usando
+                Reactjs, JS, HTML, CSS, entre outras tecnologias.
               </p>
-              <button className="btn btn-sm">Veja todos os projetos!</button>
+              <button className="text-accent font-semibold text-gradient">
+                Veja todos os projetos!
+              </button>
             </div>
             <div
               className="group relative overflow-hidden border-2 border-white/50
             rounded-xl"
             >
-              <div
+              <a
                 className="cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
-              z-40 transition-all duration-300"
-              ></div>
+              z-40 text-transparent transition-all duration-30"
+                href="https://netflix-project-lovat.vercel.app"
+              >
+                a
+              </a>
+
               <img
                 className="group-hover:scale-125 transition-all duration-500"
                 src={Img1}
                 alt=""
-              ></img>
+              />
               <div
                 className="absolute -bottom-full left-12 group-hover:bottom-24
                  transition-all duration-500 z-50"
@@ -66,21 +72,24 @@ const Work = () => {
               once: false,
               amout: 0.3,
             }}
-            className="flex-1 flex flex-col gap-y-10 lg:gap-y-12"
+            className="flex-1 flex flex-col gap-y-10 lg:gap-y-10"
           >
             <div
               className="group relative overflow-hidden border-2 border-white/50
             rounded-xl"
             >
-              <div
-                className="cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
+              <a
+                href="https://glamour-photo.vercel.app"
+                className="text-transparent cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
               z-40 transition-all duration-300"
-              ></div>
+              >
+                a
+              </a>
               <img
                 className="group-hover:scale-125 object-cover transition-all duration-500"
                 src={Img2}
                 alt=""
-              ></img>
+              />
               <div
                 className="absolute -bottom-full left-12 group-hover:bottom-24
                  transition-all duration-500 z-50"
@@ -98,15 +107,16 @@ const Work = () => {
               className="group relative overflow-hidden border-2 border-white/50
             rounded-xl"
             >
-              <div
-                className="cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
+              <a
+                href="https://chat-bruno-react.vercel.app"
+                className="text-transparent cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
               z-40 transition-all duration-300"
-              ></div>
+              >a</a>
               <img
                 className="group-hover:scale-125 transition-all duration-500"
                 src={Img3}
                 alt=""
-              ></img>
+              />
               <div
                 className="absolute -bottom-full left-12 group-hover:bottom-24
                  transition-all duration-500 z-50"

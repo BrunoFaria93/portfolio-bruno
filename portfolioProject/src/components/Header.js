@@ -1,7 +1,7 @@
 import React from "react";
 const Header = () => {
     return (
-        <header className="py-8 bg-transparent relative overflow-hidden">
+        <header className="py-5 bg-transparent relative overflow-hidden">
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* <a href="#">
