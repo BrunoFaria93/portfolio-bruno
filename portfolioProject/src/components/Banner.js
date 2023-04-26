@@ -80,7 +80,7 @@ const Banner = () => {
                 className="btn btn-sm"
                 onClick={() =>
                   window.open(
-                    "https://wa.me/55085996056772?text=Ol%C3%A1%2C%20eu%20quero%20um%20convite%20para%20participar%20da%20muzie!",
+                    "https://wa.me/55085996056772?text=Ol%C3%A1%2C%20eu%20vim%20do%20seu%20site%20portfólio%20e%20gostaria de trocar uma ideia!",
                     "_blank"
                   )
                 }
