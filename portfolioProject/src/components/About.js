@@ -54,7 +54,7 @@ const About = () => {
             </p>
             <div className="flex justify-start items-center gap-x-6 lg:gap-x-10 mb-8">
               <div className="flex flex-col justify-center items-center h-auto">
-                <div className="text-[40px] font-tertiary text-gradient mb-2">
+                <div className="text-[40px] h-[43px] font-tertiary text-gradient mb-1 p-1">
                   {inView ? <CountUp start={0} end={13} duration={3} /> : <></>}
                 </div>
                 <div className="font-primary text-sm tracking-tighter-[2px]">
@@ -63,7 +63,7 @@ const About = () => {
                 </div>
               </div>
               <div className="flex flex-col justify-center h-auto items-center">
-                <div className="text-[40px] font-tertiary text-gradient mb-2">
+                <div className="text-[40px] h-[43px] font-tertiary text-gradient mb-1 p-1">
                   {inView ? <CountUp start={0} end={2} duration={3} /> : <></>}
                 </div>
                 <div className="font-primary text-sm tracking-tighter-[2px]">

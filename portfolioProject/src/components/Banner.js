@@ -38,14 +38,16 @@ const Banner = () => {
               }}
               className="mb-6 text-[36px] flex flex-col lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
             >
-              <span className="mr-1 text-white">Eu sou um </span>
+              <span className="mr-1 text-white">Eu sou </span>
               <TypeAnimation
                 sequence={[
                   "Desenvolvedor",
                   2000,
                   "Estudante",
                   2000,
-                  "Amante da TI",
+                  "Solucionador",
+                  2000,
+                  "Criativo",
                   2000,
                 ]}
                 speed={50}
@@ -64,7 +66,7 @@ const Banner = () => {
               }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
+              "A programação é a arte de criar algo do nada, com apenas o poder da mente e a habilidade das mãos. Seja criativo, persistente e sempre em busca de aprender mais."
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
