@@ -39,7 +39,7 @@ const Work = () => {
               <a
                 className="cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
               z-40 text-transparent transition-all duration-30"
-                href="https://netflix-project-lovat.vercel.app"
+                href="https://netflix-clone-proj.vercel.app"
               >
                 a
               </a>
