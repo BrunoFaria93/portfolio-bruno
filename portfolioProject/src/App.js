@@ -1,6 +1,6 @@
 import About from "./components/About";
 import Banner from "./components/Banner";
-import Contact from "./components/Contact";
+import Experiences from "./components/Experiences";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Services from "./components/Services";
@@ -15,7 +15,7 @@ function App() {
       <About />
       <Services />
       <Work />
-      <Contact />
+      <Experiences />
       <div className="h-[4000px]"></div>
     </div>
   );

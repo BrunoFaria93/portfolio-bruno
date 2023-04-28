@@ -69,25 +69,25 @@ import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { Link } from "react-scroll";
+
 const services = [
-  {
-    name: "Kenzie Academy - COACH de Ensino (MONITOR)",
-    date: "08/21 - 02/22",
-    description: "Tirava dúvida e aplicava provas para devs novatos da instituição. Assunto: HTML, CSS e JS.",
-    link: "https://kenzie.com.br/blog/como-e-ser-coach-na-kenzie-academy/",
-  },
   {
     name: "Muzie Online - Desenvolvedor Web Front-end",
     date: "05/22 - 02/23",
     description: "Criação de novas features da rede social (Chat, Feed de fotos, novas formas de pagamento etc), criação de novos designs para páginas, manutenção e refatoração do código.",
     link: "https://www.muzieonline.com.br/welcome",
+  },
+  {
+    name: "Kenzie Academy - COACH de Ensino (MONITOR)",
+    date: "08/21 - 02/22",
+    description: "Tirava dúvida e aplicava provas para devs novatos da instituição. Assunto: HTML, CSS e JS.",
+    link: "https://kenzie.com.br/blog/como-e-ser-coach-na-kenzie-academy/",
   }
 ];
 
-const Contact = () => {
+const Experiences = () => {
   return (
-    <section className="section" id="contact">
+    <section className="section" id="experiences">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           <motion.div
@@ -159,4 +159,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Experiences;
