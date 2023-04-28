@@ -43,7 +43,6 @@ const Work = () => {
               >
                 a
               </a>
-
               <img
                 className="group-hover:scale-125 transition-all duration-500"
                 src={Img1}
