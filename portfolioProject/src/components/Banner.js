@@ -57,7 +57,7 @@ const Banner = () => {
               />
             </motion.div>
             <motion.p
-              variants={fadeIn("up", 0.5)}
+              variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{
@@ -66,10 +66,12 @@ const Banner = () => {
               }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              "A programação é a arte de criar algo do nada, com apenas o poder da mente e a habilidade das mãos. Seja criativo, persistente e sempre em busca de aprender mais."
+              "A programação é a arte de criar algo do nada, com apenas o poder
+              da mente e a habilidade das mãos. Seja criativo, persistente e
+              sempre em busca de aprender mais."
             </motion.p>
             <motion.div
-              variants={fadeIn("up", 0.6)}
+              variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{
@@ -96,7 +98,7 @@ const Banner = () => {
               </Link>
             </motion.div>
             <motion.div
-              variants={fadeIn("up", 0.7)}
+              variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{
@@ -105,16 +107,22 @@ const Banner = () => {
               }}
               className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
             >
-              <a href="https://www.linkedin.com/in/brunofaria93/" className="text-gradient btn-link text-white">
+              <a
+                href="https://www.linkedin.com/in/brunofaria93/"
+                className="text-gradient btn-link text-white"
+              >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/BrunoFaria93" className="text-gradient btn-link text-white">
+              <a
+                href="https://github.com/BrunoFaria93"
+                className="text-gradient btn-link text-white"
+              >
                 <FaGithub />
               </a>
             </motion.div>
           </div>
           <motion.div
-            variants={fadeIn("down", 0.5)}
+            variants={fadeIn("down", 0.3)}
             initial="hidden"
             whileInView={"show"}
             className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]"

@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import Img1 from "../assets/projeto1.png";
+import Img1 from "../assets/hotelProject.jpg";
 import Img2 from "../assets/projeto2.png";
 import Img3 from "../assets/projeto3.png";
 
 const Work = () => {
   return (
-    <section className="section" id="work">
+    <section className="py-8 lg:py-24 lg:h-screen flex items-center" id="work">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-x-10">
           <motion.div
@@ -25,21 +25,30 @@ const Work = () => {
                 Portfólio de Projetos <br />
               </h2>
               <p className="max-w-sm mb-16">
-                Clique em uma das imagens abaixo para abrir projetos que fiz usando
-                Reactjs, JS, HTML, CSS, entre outras tecnologias.
+                Clique em uma das imagens abaixo para abrir projetos que fiz
+                usando Reactjs, JS, HTML, CSS, entre outras tecnologias.
               </p>
               <button className="text-accent font-semibold text-gradient">
                 Veja todos os projetos!
               </button>
             </div>
-            <div
-              className="group relative overflow-hidden border-2 border-white/50
-            rounded-xl"
-            >
+          </motion.div>
+
+          <motion.div
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{
+              once: false,
+              amout: 0.3,
+            }}
+            className="flex-1 flex flex-col gap-y-10 lg:gap-y-5 h-[800px]"
+          >
+            <div className="group relative border-2 border-white/50 rounded-xl h-auto overflow-hidden">
               <a
                 className="cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
               z-40 text-transparent transition-all duration-30"
-                href="https://netflix-clone-proj.vercel.app"
+                href="https://hotel-project-three.vercel.app"
               >
                 a
               </a>
@@ -58,25 +67,10 @@ const Work = () => {
                 className="absolute -bottom-full left-12 group-hover:bottom-14
                  transition-all duration-700 z-50"
               >
-                <span className="text-3xl text-white">Netflix Clone</span>
+                <span className="text-3xl text-white">Bruno's Hotel</span>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            variants={fadeIn("left", 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{
-              once: false,
-              amout: 0.3,
-            }}
-            className="flex-1 flex flex-col gap-y-10 lg:gap-y-10"
-          >
-            <div
-              className="group relative overflow-hidden border-2 border-white/50
-            rounded-xl"
-            >
+            <div className="group relative border-2 border-white/50 rounded-xl h-auto overflow-hidden">
               <a
                 href="https://glamour-photo.vercel.app"
                 className="text-transparent cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
@@ -102,15 +96,14 @@ const Work = () => {
                 <span className="text-3xl text-white">Glamour Photos</span>
               </div>
             </div>
-            <div
-              className="group relative overflow-hidden border-2 border-white/50
-            rounded-xl"
-            >
+            <div className="group relative border-2 border-white/50 rounded-xl h-auto overflow-hidden">
               <a
                 href="https://chat-bruno-react.vercel.app"
                 className="text-transparent cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
               z-40 transition-all duration-300"
-              >a</a>
+              >
+                a
+              </a>
               <img
                 className="group-hover:scale-125 transition-all duration-500"
                 src={Img3}

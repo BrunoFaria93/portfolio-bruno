@@ -16,7 +16,7 @@ function App() {
       <Services />
       <Work />
       <Experiences />
-      <div className="h-[4000px]"></div>
+      <div className="h-[300px]"></div>
     </div>
   );
 }

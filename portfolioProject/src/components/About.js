@@ -32,7 +32,7 @@ const About = () => {
             ></motion.div>
           )} */}
           <motion.div
-            variants={fadeIn("left", 0.5)}
+            variants={fadeIn("left", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{
@@ -64,7 +64,7 @@ const About = () => {
               </div>
               <div className="flex flex-col justify-center h-auto items-center">
                 <div className="text-[40px] h-[43px] font-tertiary text-gradient mb-1 p-1">
-                  {inView ? <CountUp start={0} end={2} duration={3} /> : <></>}
+                  {inView ? <CountUp start={0} end={3} duration={3} /> : <></>}
                 </div>
                 <div className="font-primary text-sm tracking-tighter-[2px]">
                   Anos de <br />

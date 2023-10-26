@@ -74,15 +74,17 @@ const services = [
   {
     name: "Muzie Online - Desenvolvedor Web Front-end",
     date: "05/22 - 02/23",
-    description: "Criação de novas features da rede social (Chat, Feed de fotos, novas formas de pagamento etc), criação de novos designs para páginas, manutenção e refatoração do código.",
+    description:
+      "Criação de novas features da rede social (Chat, Feed de fotos, novas formas de pagamento etc), criação de novos designs para páginas, manutenção e refatoração do código.",
     link: "https://www.muzieonline.com.br/welcome",
   },
   {
     name: "Kenzie Academy - COACH de Ensino (MONITOR)",
     date: "08/21 - 02/22",
-    description: "Tirava dúvida e aplicava provas para devs novatos da instituição. Assunto: HTML, CSS e JS.",
+    description:
+      "Tirava dúvida e aplicava provas para devs novatos da instituição. Assunto: HTML, CSS e JS.",
     link: "https://kenzie.com.br/blog/como-e-ser-coach-na-kenzie-academy/",
-  }
+  },
 ];
 
 const Experiences = () => {
@@ -111,7 +113,7 @@ const Experiences = () => {
               </Link> */}
           </motion.div>
           <motion.div
-            variants={fadeIn("left", 0.5)}
+            variants={fadeIn("left", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{
@@ -143,10 +145,7 @@ const Experiences = () => {
                       >
                         <BsArrowUpRight />
                       </a>
-                      <span 
-                       className="text-gradient text-sm">
-                        {date}
-                      </span>
+                      <span className="text-gradient text-sm">{date}</span>
                     </div>
                   </div>
                 );
