@@ -72,7 +72,7 @@ const Work = () => {
             </div>
             <div className="group relative border-2 border-white/50 rounded-xl h-auto overflow-hidden">
               <a
-                href="https://glamour-photo.vercel.app"
+                href="https://blitzbee-bruno.vercel.app"
                 className="text-transparent cursor-pointer group-hover:bg-black/70 w-full h-full absolute 
               z-40 transition-all duration-300"
               >
@@ -93,7 +93,7 @@ const Work = () => {
                 className="absolute -bottom-full left-12 group-hover:bottom-14
                  transition-all duration-700 z-50"
               >
-                <span className="text-3xl text-white">Glamour Photos</span>
+                <span className="text-3xl text-white">BlitzBee - Rede Social</span>
               </div>
             </div>
             <div className="group relative border-2 border-white/50 rounded-xl h-auto overflow-hidden">
