@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import Img1 from "../assets/hotelProject.jpg";
-import Img2 from "../assets/projeto2.png";
+import Img2 from "../assets/blitzbeePhoto.png";
 import Img3 from "../assets/projeto3.png";
 
 const Work = () => {
