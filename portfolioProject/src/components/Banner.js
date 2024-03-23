@@ -70,7 +70,7 @@ const Banner = () => {
               da mente e a habilidade das mãos. Seja criativo, persistente e
               sempre em busca de aprender mais."
             </motion.p>
-            <motion.div
+            {/* <motion.div
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
@@ -96,7 +96,7 @@ const Banner = () => {
                   Meu Portfólio
                 </a>
               </Link>
-            </motion.div>
+            </motion.div> */}
             <motion.div
               variants={fadeIn("up", 0.3)}
               initial="hidden"
