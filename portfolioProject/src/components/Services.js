@@ -2,29 +2,30 @@ import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { Link } from "react-scroll";
 const services = [
   {
-    name: "Uninassau - Análise e Desenvolvimento de Sistemas",
-    date: "02/23 - atualmente",
+    name: "Unigrande - Logística",
+    date: "2016 - 2020",
     description:
-      "Com a graduação em Análise e Desenvolvimento de Sistemas da UNINASSAU você estará apto para concorrer as melhores oportunidades que o mercado de Tecnologia da Informação oferece. Com essa formação você vai poder atuar em profissões como Engenheiro Front-End, Desenvolvedor de Java, Cientista de dados, Gerente de Produto e Engenheiro de DevOps.",
-    link: "https://graduacao.uninassau.digital/nossos-cursos/analise-e-desenvolvimento-de-sistemas/85/60/2?utm_source=google&utm_medium=search&utm_campaign=um-uninassau-graduacao_ead_20221-conversao-google-&utm_content=um-uninassau-graduacao_ead_20221-conversao-google--search-generico_-interesses-&utm_term=um-uninassau-graduacao_ead_20221-conversao-google--search-generico_-interesses--na--&gad=1&gclid=CjwKCAjwl6OiBhA2EiwAuUwWZXK-KEdGd-6yBpOdfiRSEPObyfgVnOt8hY-NksLXEpno9mjDhVid1BoChosQAvD_BwE",
+      "Como estudante de Logística na Unigrande, tive a oportunidade de mergulhar em um ambiente de aprendizado dinâmico e prático. Aprendi a aplicar conceitos teóricos em situações reais, desenvolvendo habilidades essenciais para a gestão eficaz da cadeia de suprimentos. Minha experiência na Unigrande me preparou para enfrentar os desafios do mundo profissional com confiança e conhecimento sólido.",
+    link: "https://unigrande.edu.br/cursos/UGD-LOGISTICA",
   },
   {
-    name: "Kenzie Academy - Desenvolvedor Web Fullstack",
-    date: "07/21 - 07/22",
+    name: "Uniateneu - Design de Moda",
+    date: "2020 - 2022",
     description:
-      "Curso de 2.000 horas de Desenvolvimento Full Stack que abrange as tecnologias Front End e Back End além de soft skills disponíveis para o mercado de trabalho. Entre as linguagens e tecnologias aprendidas, estão HTML5, CSS3, JavaScript (ES6 +), React, Redux, Python (Django e Flask) e SQL.",
-    link: "https://kenzie.com.br/quem-somos?utm_medium=google-ads&hsa_ad=648094279880&hsa_acc=2166776305&hsa_src=g&gclid=CjwKCAjwl6OiBhA2EiwAuUwWZXPav0L4a_ripnYYNEQFHrLHHQVJYe4L1DCduoVjn9s-qqLOkN2SxBoCopEQAvD_BwE&hsa_grp=137371409172&utm_term=kenzie%20academy&utm_source=adwords&gad=1&hsa_cam=15853756022&utm_campaign=INSC-PER-2022-TERMOS-MARCA-SEARCH",
+      "Minha experiência de formação em Designer de Moda na Uniateneu foi incrivelmente enriquecedora. Através de um currículo abrangente e prático, desenvolvi habilidades essenciais em design, modelagem e criação de peças únicas. Além disso, tive a oportunidade de colaborar em projetos criativos e explorar tendências emergentes na indústria da moda. Esta jornada me capacitou para ingressar no mercado de trabalho com confiança e criatividade, pronta para enfrentar os desafios e contribuir para a inovação no setor.",
+    link: "https://uniateneu.edu.br/curso/design-de-moda/",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="section" id="services">
+    <section className="section">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
+        <div 
+        id="services"
+        className="flex flex-col lg:flex-row">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
@@ -33,9 +34,10 @@ const Services = () => {
               once: false,
               amout: 0.3,
             }}
-            className="flex-1 mb-12 lg:mb-0"
+            className="flex-1 mt-20 lg:mb-0"
           >
-            <h2 className="h2 text-accent mb-2">Formação</h2>
+            <h2 
+            className="h2 text-[#8b5cf6] mb-2">Formação</h2>
             {/* <h3 className="h3 max-w-[455px] mb-8">
               Programador Front-end com mais de 1 ano de experiência.
             </h3> */}
@@ -74,7 +76,7 @@ const Services = () => {
                     <div className="flex flex-col flex-1 items-end">
                       <a
                         href={link}
-                        className="btn w-9 h-9 mb-[42px] flex justify-center items-center"
+                        className="bg-[#8b5cf6] text-white rounded-full w-9 h-9 mb-[42px] flex justify-center items-center"
                       >
                         <BsArrowUpRight />
                       </a>

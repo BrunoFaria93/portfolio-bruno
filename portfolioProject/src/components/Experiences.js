@@ -41,19 +41,19 @@
 //           >
 //             <input
 //               className="bg-transparent border-b py-3 outline-none w-full
-//                 placeholder:text-white focus:border-accent transition-all"
+//                 placeholder:text-black focus:border-accent transition-all"
 //               type="text"
 //               placeholder="Seu nome"
 //             />
 //             <input
 //               className="bg-transparent border-b py-3 outline-none w-full
-//                 placeholder:text-white focus:border-accent transition-all"
+//                 placeholder:text-black focus:border-accent transition-all"
 //               type="text"
 //               placeholder="Seu e-mail"
 //             />
 //             <textarea
 //               className="bg-transparent border-b py-3 outline-none w-full
-//                 placeholder:text-white focus:border-accent transition-all resize-none mb-12"
+//                 placeholder:text-black focus:border-accent transition-all resize-none mb-12"
 //               placeholder="Sua mensagem..."
 //             ></textarea>
 //             <button className="btn btn-lg w-2/3">Enviar mensagem</button>
@@ -72,18 +72,28 @@ import { fadeIn } from "../variants";
 
 const services = [
   {
-    name: "Muzie Online - Desenvolvedor Web Front-end",
-    date: "05/22 - 02/23",
+    name: "Miamia Denim - Estilista",
+    date: "2022",
     description:
-      "Criação de novas features da rede social (Chat, Feed de fotos, novas formas de pagamento etc), criação de novos designs para páginas, manutenção e refatoração do código.",
-    link: "https://www.muzieonline.com.br/welcome",
+      "Criação de modelos, elaboração de fichas técnicas e criação de catálogos.",
   },
   {
-    name: "Kenzie Academy - COACH de Ensino (MONITOR)",
-    date: "08/21 - 02/22",
+    name: "Movo Fitness - Estilista",
+    date: "2023",
     description:
-      "Tirava dúvida e aplicava provas para devs novatos da instituição. Assunto: HTML, CSS e JS.",
-    link: "https://kenzie.com.br/blog/como-e-ser-coach-na-kenzie-academy/",
+      "Criação de coleções.",
+  },
+  {
+    name: "Assistente do Ivanildo Nunes",
+    date: "2023",
+    description:
+      "Assistente de criação de modelos.",
+  },
+  {
+    name: "CorporeFit - Assistente Comercial",
+    date: "Atual",
+    description:
+      "Cuido do site e gerencio ações de marketing.",
   },
 ];
 
@@ -102,9 +112,9 @@ const Experiences = () => {
             }}
             className="flex-1 mb-12 lg:mb-0"
           >
-            <h2 className="h2 text-accent mb-6">Experiências</h2>
+            <h2 className="h2 text-[#8b5cf6] mb-6">Experiências</h2>
             <h3 className="h3 max-w-[455px] mb-8">
-              Programador Front-end com mais de 1 ano de experiência.
+              Designer de moda com mais de 2 anos de experiência.
             </h3>
             {/* <Link to="work" activeClass="active" smooth={true} spy={true}>
                 <a href="work" className="btn p-5">
@@ -138,15 +148,15 @@ const Experiences = () => {
                         {description}
                       </p>
                     </div>
-                    <div className="flex flex-col flex-1 items-end">
+                    {/* <div className="flex flex-col flex-1 items-end">
                       <a
                         href={link}
-                        className="btn w-9 h-9 mb-[42px] flex justify-center items-center"
+                        className="bg-[#8b5cf6] text-white rounded-full w-9 h-9 mb-[42px] flex justify-center items-center"
                       >
-                        <BsArrowUpRight />
+                        <BsArrowUpRight color="white"/>
                       </a>
                       <span className="text-gradient text-sm">{date}</span>
-                    </div>
+                    </div> */}
                   </div>
                 );
               })}

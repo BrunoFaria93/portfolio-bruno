@@ -16,7 +16,7 @@ const Nav = () => {
       <div className="container mx-auto">
         <div
           className="w-fullink-black/20 h-[65px] lg:h-[96px] backdrop-blur-2xl rounded-full max-w-[460px] 
-        mx-auto px-5 flex justify-between text-2xl text-white/50 items-center"
+        mx-auto px-5 flex justify-between text-2xl text-black/50 items-center"
         >
           <Link
             to="home"
@@ -46,7 +46,7 @@ const Nav = () => {
           >
             <BsBook />
           </Link>
-          <Link
+          {/* <Link
             to="work"
             activeClass="active"
             smooth={true}
@@ -54,7 +54,7 @@ const Nav = () => {
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
           >
             <BsClipboardData />
-          </Link>
+          </Link> */}
           <Link
             to="experiences"
             activeClass="active"

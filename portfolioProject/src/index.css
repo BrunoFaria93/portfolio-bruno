@@ -45,7 +45,7 @@ body {
 @layer base {
   body {
     @apply font-secondary text-lg leading-8
-    text-white;
+    text-black;
   }
   .h2 {
     @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
@@ -54,7 +54,7 @@ body {
     @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
   }
   .btn {
-    @apply rounded-full font-primary text-white font-medium;
+    @apply rounded-full font-primary text-black font-medium;
   }
   .btn-sm {
     @apply h-[48px] px-6 text-sm;

@@ -8,10 +8,10 @@ const Header = () => {
                         <img className="absolute w-28 -top-0 left-4" src={require("../assets/logo.png")} alt="logo" />
                     </a> */}
           <button
-            className="btn btn-sm ml-auto"
+            className="bg-[#8b5cf6] rounded-full text-lg text-white font-bold btn-sm ml-auto"
             onClick={() =>
               window.open(
-                "https://wa.me/55085996056772?text=Ol%C3%A1%2C%20eu%20vim%20do%20seu%20site%20portfólio%20e%20gostaria de trocar uma ideia!",
+                "https://wa.me/55085998323599?text=Ol%C3%A1%2C%20eu%20vim%20do%20seu%20site%20portfólio%20e%20gostaria de trocar uma ideia!",
                 "_blank"
               )
             }
