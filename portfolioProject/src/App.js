@@ -8,7 +8,7 @@ import Work from "./components/Work";
 
 function App() {
   return (
-    <div className="bg-[#f3f3f3] overflow-hidden">
+    <div className="bg-gradient-to-r from-[#2f0838] to-[#310E68] overflow-hidden">
       <Header />
       <Banner />
       <Nav />

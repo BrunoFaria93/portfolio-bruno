@@ -24,9 +24,9 @@ const Banner = () => {
                 once: false,
                 amout: 0.7,
               }}
-              className="text-[45px] font-bold leading-[0.8] lg:text-[110px]"
+              className="text-[55px] font-bold leading-[0.8] lg:text-[110px]"
             >
-              MILENE <span>SOUSA</span>
+              BRUNO <span>FARIA</span>
             </motion.h1>
             <motion.div
               variants={fadeIn("up", 0.3)}
@@ -38,7 +38,23 @@ const Banner = () => {
               }}
               className="mb-6 text-[36px] flex flex-col lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
             >
-              <span className="mt-3 text-[25px]">DESIGNER DE MODA</span>
+              <span className="mr-1 text-white">Eu sou </span>
+              <TypeAnimation
+                sequence={[
+                  "Desenvolvedor",
+                  2000,
+                  "Estudante",
+                  2000,
+                  "Solucionador",
+                  2000,
+                  "Criativo",
+                  2000,
+                ]}
+                speed={50}
+                className="text-accent"
+                wrapper="span"
+                repeat={Infinity}
+              />
             </motion.div>
             <motion.p
               variants={fadeIn("up", 0.3)}
@@ -50,10 +66,9 @@ const Banner = () => {
               }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Sou uma designer de moda apaixonada por transformar ideias em
-              realidade através das minhas criações. Cada peça que desenvolvo é
-              uma expressão única de estilo e personalidade, buscando sempre
-              inovar e surpreender.
+              "A programação é a arte de criar algo do nada, com apenas o poder
+              da mente e a habilidade das mãos. Seja criativo, persistente e
+              sempre em busca de aprender mais."
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.3)}
@@ -66,7 +81,7 @@ const Banner = () => {
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
               <button
-                className="bg-[#8b5cf6] px-5 py-2 rounded-full text-white font-bold text-lg"
+                className="btn btn-sm"
                 onClick={() =>
                   window.open(
                     "https://wa.me/55085996056772?text=Ol%C3%A1%2C%20eu%20vim%20do%20seu%20site%20portfólio%20e%20gostaria de trocar uma ideia!",
@@ -81,6 +96,29 @@ const Banner = () => {
                   Meu Portfólio
                 </a>
               </Link>
+            </motion.div>
+            <motion.div
+              variants={fadeIn("up", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{
+                once: false,
+                amout: 0.7,
+              }}
+              className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
+            >
+              <a
+                href="https://www.linkedin.com/in/brunofaria93/"
+                className="text-gradient btn-link text-white"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://github.com/BrunoFaria93"
+                className="text-gradient btn-link text-white"
+              >
+                <FaGithub />
+              </a>
             </motion.div>
           </div>
           <motion.div
