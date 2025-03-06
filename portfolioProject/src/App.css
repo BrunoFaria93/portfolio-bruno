@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+.custom-scroll::-webkit-scrollbar {
+  width: 6px; /* Largura da barra de rolagem */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do fundo da trilha */
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #888; /* Cor do "botão" de rolagem */
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor ao passar o mouse */
+}

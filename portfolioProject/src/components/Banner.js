@@ -111,13 +111,15 @@ const Banner = () => {
                 href="https://www.linkedin.com/in/brunofaria93/"
                 className="text-gradient btn-link text-white"
               >
-                <FaLinkedin />
+                <FaLinkedin className="cursor-pointer" size={25} />
               </a>
               <a
                 href="https://github.com/BrunoFaria93"
-                className="text-gradient btn-link text-white"
+                className="text-gradient btn-link text-white inline-block relative z-10" // `relative` e `z-10` para garantir que o link esteja em cima de outros elementos
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <FaGithub />
+                <FaGithub size={25} />
               </a>
             </motion.div>
           </div>

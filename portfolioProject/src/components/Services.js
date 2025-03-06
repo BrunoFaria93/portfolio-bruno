@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 const services = [
   {
     name: "Uninassau - Análise e Desenvolvimento de Sistemas",
-    date: "02/23 - atualmente",
+    date: "Formado - 12/2024",
     description:
       "Com a graduação em Análise e Desenvolvimento de Sistemas da UNINASSAU você estará apto para concorrer as melhores oportunidades que o mercado de Tecnologia da Informação oferece. Com essa formação você vai poder atuar em profissões como Engenheiro Front-End, Desenvolvedor de Java, Cientista de dados, Gerente de Produto e Engenheiro de DevOps.",
     link: "https://graduacao.uninassau.digital/nossos-cursos/analise-e-desenvolvimento-de-sistemas/85/60/2?utm_source=google&utm_medium=search&utm_campaign=um-uninassau-graduacao_ead_20221-conversao-google-&utm_content=um-uninassau-graduacao_ead_20221-conversao-google--search-generico_-interesses-&utm_term=um-uninassau-graduacao_ead_20221-conversao-google--search-generico_-interesses--na--&gad=1&gclid=CjwKCAjwl6OiBhA2EiwAuUwWZXK-KEdGd-6yBpOdfiRSEPObyfgVnOt8hY-NksLXEpno9mjDhVid1BoChosQAvD_BwE",
@@ -61,7 +61,7 @@ const Services = () => {
                 return (
                   <div
                     key={index}
-                    className="border-b border-white/20 pb-5 h-auto mb-[38px] flex"
+                    className="border-b border-white/20 pb-5 h-auto mb-[38px] flex gap-10"
                   >
                     <div className="max-w-[476px]">
                       <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-6">
