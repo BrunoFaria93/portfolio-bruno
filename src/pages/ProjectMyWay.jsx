@@ -1,8 +1,17 @@
 import ProjectLayout from "../components/ProjectLayout";
+import myway from "../assets/myway.png";
+import mywaypayment from "../assets/mywaypayment.png";
+import mywayreservas from "../assets/mywayreservas.png";
+import mywaydashboard from "../assets/mywaydashboard.png";
+import myywayfinanceiro from "../assets/mywayfinanceiro.png";
+import mywayexports from "../assets/mywayexports.png";
+import mywaymultiroom from "../assets/mywaymultiroom.png";
+import mywayresend from "../assets/mywayresend.png";
 
 export default function ProjectMyWay({ darkMode, language }) {
   const project = {
     title: "MyWay Flats",
+    phoneMockup: false, // 👈 usa img normal
 
     subtitle:
       language === "pt" ? (
@@ -86,6 +95,11 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Página de busca e reserva com calendário de disponibilidade em tempo real, galeria de fotos por apartamento e fluxo completo de checkout."
             : "Search and booking page with real-time availability calendar, apartment photo gallery and full checkout flow.",
+        image: myway,
+        caption:
+          language === "pt"
+            ? "Site público — listagem de apartamentos"
+            : "Public website — apartment listings",
       },
       {
         title:
@@ -96,6 +110,11 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Integração com Stripe para pagamento via cartão de crédito e geração de QR Code PIX. Confirmação automática via webhook."
             : "Stripe integration for credit card payments and PIX QR Code generation. Automatic confirmation via webhook.",
+        image: mywaypayment,
+        caption:
+          language === "pt"
+            ? "Checkout — cartão e PIX"
+            : "Checkout — card and PIX",
       },
       {
         title:
@@ -106,6 +125,11 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Sincronização bidirecional de disponibilidade com Airbnb e Booking.com via protocolo iCal. Datas bloqueadas em uma plataforma refletem automaticamente nas outras."
             : "Bidirectional availability sync with Airbnb and Booking.com via iCal protocol. Blocked dates on one platform automatically reflect on others.",
+        image: mywayreservas,
+        caption:
+          language === "pt"
+            ? "Calendário — sync com OTAs"
+            : "Calendar — OTA sync",
       },
       {
         title: language === "pt" ? "Painel Administrativo" : "Admin Dashboard",
@@ -113,6 +137,11 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Gestão completa de apartamentos, reservas e hóspedes. Controle de disponibilidade por calendário com bloqueio manual de datas."
             : "Full management of apartments, reservations and guests. Availability control via calendar with manual date blocking.",
+        image: mywaydashboard,
+        caption:
+          language === "pt"
+            ? "Painel admin — gestão de reservas"
+            : "Admin panel — reservation management",
       },
       {
         title: language === "pt" ? "Gestão Financeira" : "Financial Management",
@@ -120,6 +149,11 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Visão consolidada de receitas por período, status de pagamentos pendentes e histórico de transações."
             : "Consolidated view of revenue by period, pending payment status and transaction history.",
+        image: myywayfinanceiro,
+        caption:
+          language === "pt"
+            ? "Financeiro — receitas e pagamentos"
+            : "Financial — revenue and payments",
       },
       {
         title:
@@ -130,6 +164,9 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Exportação de relatórios financeiros e de ocupação em PDF e Excel para uso contábil e gerencial."
             : "Export of financial and occupancy reports in PDF and Excel for accounting and management use.",
+        image: mywayexports,
+        caption:
+          language === "pt" ? "Relatórios exportáveis" : "Exportable reports",
       },
       {
         title:
@@ -138,6 +175,11 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Confirmações de reserva, lembretes de check-in e notificações de pagamento enviados automaticamente via Resend."
             : "Booking confirmations, check-in reminders and payment notifications sent automatically via Resend.",
+        image: mywayresend,
+        caption:
+          language === "pt"
+            ? "E-mails automáticos via Resend"
+            : "Automatic emails via Resend",
       },
       {
         title: language === "pt" ? "Multi-propriedade" : "Multi-property",
@@ -145,33 +187,36 @@ export default function ProjectMyWay({ darkMode, language }) {
           language === "pt"
             ? "Suporte a múltiplos apartamentos com configurações independentes de preço, disponibilidade, fotos e regras de reserva."
             : "Support for multiple apartments with independent configuration for pricing, availability, photos and booking rules.",
+        image: mywaymultiroom,
+        caption:
+          language === "pt" ? "Múltiplos apartamentos" : "Multiple apartments",
       },
     ],
 
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070",
+        url: myway,
         caption:
           language === "pt"
             ? "Site público — listagem de apartamentos"
             : "Public website — apartment listings",
       },
       {
-        url: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070",
+        url: myway,
         caption:
           language === "pt"
             ? "Página do apartamento — galeria e disponibilidade"
             : "Apartment page — gallery and availability",
       },
       {
-        url: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070",
+        url: myway,
         caption:
           language === "pt"
             ? "Painel admin — gestão financeira"
             : "Admin panel — financial management",
       },
       {
-        url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070",
+        url: myway,
         caption:
           language === "pt"
             ? "Relatórios — exportação em PDF e Excel"
@@ -229,11 +274,7 @@ export async function syncExternalCalendar(
   amount: totalCents,
   currency: "brl",
   payment_method_types: ["pix"],
-  metadata: {
-    reservationId,
-    apartmentId,
-    guestEmail,
-  },
+  metadata: { reservationId, apartmentId, guestEmail },
 });
 
 const pixQrCode =

@@ -11,6 +11,7 @@ import sneakpeek8 from "../assets/sneakpeek8.jpg";
 export default function ProjectSneakPeek({ darkMode, language }) {
   const project = {
     title: "Sneak Peek",
+    phoneMockup: true,
     subtitle:
       language === "pt" ? (
         <span>

@@ -219,12 +219,26 @@ export default function ProjectLayout({ project, darkMode }) {
               {/* Imagem */}
               <div
                 className={`relative overflow-hidden flex items-center justify-center h-[60vh] ${
-                  darkMode ? "bg-[#0d0d0d]" : "bg-gray-100"
+                  project.phoneMockup
+                    ? darkMode
+                      ? "bg-[#0d0d0d]"
+                      : "bg-gray-100"
+                    : darkMode
+                      ? "bg-[#111]"
+                      : "bg-gray-900"
                 } ${isEven ? "lg:order-2" : "lg:order-1"}`}
               >
                 {feature.image ? (
                   <>
-                    <PhoneMockup src={feature.image} alt={feature.title} />
+                    {project.phoneMockup ? (
+                      <PhoneMockup src={feature.image} alt={feature.title} />
+                    ) : (
+                      <img
+                        src={feature.image}
+                        alt={feature.title}
+                        className="w-full h-full object-contain p-4"
+                      />
+                    )}
                     {feature.caption && (
                       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                         <p className="text-white text-xs font-bold uppercase tracking-widest">
