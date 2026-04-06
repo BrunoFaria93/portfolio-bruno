@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import PhoneMockup from "./PhoneMockup";
+
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -55,7 +56,9 @@ export default function ProjectLayout({ project, darkMode }) {
             <ArrowLeft size={16} />
             Voltar
           </Link>
-          <div className="text-3xl font-black tracking-tighter italic">
+
+          {/* Logo — esconde no mobile */}
+          <div className="hidden md:block text-3xl font-black tracking-tighter italic">
             B<span className="text-pink-500">DEV</span>
             <span
               className={`text-xs uppercase not-italic tracking-widest ml-2 ${
@@ -65,6 +68,7 @@ export default function ProjectLayout({ project, darkMode }) {
               v.2026
             </span>
           </div>
+
           <div className="flex gap-3">
             {live && (
               <a
@@ -73,7 +77,9 @@ export default function ProjectLayout({ project, darkMode }) {
                 rel="noopener noreferrer"
                 className="bg-pink-600 hover:bg-pink-700 px-4 py-2 text-xs font-black uppercase tracking-tighter transition-all text-white flex items-center gap-1"
               >
-                <ExternalLink size={14} /> Ir para o site
+                <ExternalLink size={14} />
+                <span className="hidden md:inline">Ir para o site</span>
+                <span className="md:hidden">Live</span>
               </a>
             )}
             {github && (
@@ -162,7 +168,7 @@ export default function ProjectLayout({ project, darkMode }) {
         </div>
       </section>
 
-      {/* FEATURES — alternando texto e imagem */}
+      {/* FEATURES */}
       <section className={`${darkMode ? "bg-[#050505]" : "bg-white"} py-0`}>
         {features?.map((feature, i) => {
           const isEven = i % 2 === 0;
@@ -177,12 +183,6 @@ export default function ProjectLayout({ project, darkMode }) {
             "border-orange-400",
             "border-cyan-400",
             "border-purple-400",
-          ][i % 4];
-          const bgAccent = [
-            "bg-pink-600/20",
-            "bg-orange-600/20",
-            "bg-cyan-600/20",
-            "bg-purple-600/20",
           ][i % 4];
 
           return (
@@ -248,7 +248,6 @@ export default function ProjectLayout({ project, darkMode }) {
                     )}
                   </>
                 ) : (
-                  /* Fallback visual quando não tem imagem */
                   <div
                     className={`w-full h-full min-h-[360px] flex items-center justify-center ${
                       darkMode ? "bg-white/5" : "bg-gray-100"
