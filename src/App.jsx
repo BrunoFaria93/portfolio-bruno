@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ProjectSneakPeek from "./pages/ProjectSneakPeek";
+import ProjectMyWay from "./pages/ProjectMyWay";
 import myway from "./assets/myway.png";
-import blitzbee from "./assets/blitzbee.png";
-import poke from "./assets/poke.png";
+import sneakpeekhero from "./assets/sneakpeekhero.jpg";
 import {
   Github,
   Linkedin,
@@ -14,10 +16,8 @@ import {
   Languages,
 } from "lucide-react";
 
-export default function GTA6Portfolio() {
+function PortfolioHome({ darkMode, language, setDarkMode, setLanguage }) {
   const [scrollY, setScrollY] = useState(0);
-  const [darkMode, setDarkMode] = useState(true);
-  const [language, setLanguage] = useState("pt");
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -212,7 +212,32 @@ export default function GTA6Portfolio() {
       },
     },
   };
+
   const t = translations[language];
+
+  const projects = [
+    {
+      title: "Sneak Peek",
+      desc:
+        language === "pt"
+          ? "SneakPeek é uma plataforma PWA mobile-first que conecta criadores de conteúdo com fãs através de assinaturas recorrentes. Criadores publicam fotos, vídeos e storys públicos ou exclusivos. Streaming via Mux, chat, notificações e painel admin.\n\nTecnologias utilizadas: Next.js 14 (App Router), TypeScript, Supabase (PostgreSQL + Auth), Cloudflare R2, Mux, Stripe (Subscriptions + Checkout), Tailwind CSS + shadcn/ui, Zustand + TanStack Query e deploy em produção na Vercel."
+          : "SneakPeek is a mobile-first PWA platform connecting creators with fans through recurring subscriptions. Creators post exclusive or public photos. Video streaming via Mux, real-time chat, notifications and admin panel.\n\nTechnologies used: Next.js 14 (App Router), TypeScript, Supabase (PostgreSQL + Auth), Cloudflare R2, Mux, Stripe (Subscriptions + Checkout), Tailwind CSS + shadcn/ui, Zustand + TanStack Query, and production deployment on Vercel.",
+      img: sneakpeekhero,
+      internalLink: "/projeto/sneakpeek",
+      link: null,
+    },
+    {
+      title: "MyWay Flats",
+      desc:
+        language === "pt"
+          ? "Plataforma web completa para gestão de apartamentos de temporada, com site público de reservas, pagamento online via cartão e PIX e sincronização automática com Airbnb e Booking via iCal.\n\nPainel administrativo com gestão financeira, relatórios em PDF/Excel e controle de disponibilidade em tempo real.\n\nTecnologias utilizadas: React, TypeScript, Tailwind CSS, Node.js, Express, Prisma ORM, PostgreSQL, Stripe, Resend e deploy em produção na plataforma Render."
+          : "Full-stack vacation rental management platform with a public booking site, online payments via card and PIX and automatic sync with Airbnb and Booking via iCal. \n\nAdmin dashboard with financial management, PDF/Excel reports, and real-time availability control. \n\nTechnologies used: React, TypeScript, Tailwind CSS, Node.js, Express, Prisma ORM, PostgreSQL, Stripe, Resend, and production deployment on the Render platform.",
+      img: myway,
+      internalLink: "/projeto/myway",
+      link: null,
+    },
+  ];
+
   return (
     <div
       className={`${darkMode ? "bg-[#0a0a0a] text-white" : "bg-gray-50 text-gray-900"} font-sans selection:bg-pink-500 selection:text-white transition-colors duration-300`}
@@ -221,15 +246,10 @@ export default function GTA6Portfolio() {
         <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]"></div>
       )}
 
-      {/* ─── NAVBAR ─────────────────────────────────────────────
-          DESKTOP: igual ao original (hidden md:flex para links)
-          MOBILE:  logo + dark/lang + whatsapp + cv (sem links de nav)
-      ──────────────────────────────────────────────────────── */}
       <nav
         className={`fixed top-0 w-full z-[90] ${darkMode ? "bg-black/50 border-white/10" : "bg-white/90 border-gray-200"} backdrop-blur-md border-b`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-          {/* Logo — igual desktop */}
           <div className="text-3xl font-black tracking-tighter italic">
             B<span className="text-pink-500">DEV</span>{" "}
             <span
@@ -239,7 +259,6 @@ export default function GTA6Portfolio() {
             </span>
           </div>
 
-          {/* Links de navegação — só desktop (sem alteração) */}
           <div className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase">
             <a
               href="#experiencia"
@@ -264,9 +283,7 @@ export default function GTA6Portfolio() {
             </a>
           </div>
 
-          {/* Ações */}
           <div className="flex gap-2 md:gap-3 items-center">
-            {/* Dark/Light — visível em todos os tamanhos */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className={`p-2 rounded ${darkMode ? "bg-white/10 hover:bg-white/20" : "bg-gray-200 hover:bg-gray-300"} transition-colors`}
@@ -274,7 +291,6 @@ export default function GTA6Portfolio() {
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            {/* Idioma — visível em todos os tamanhos */}
             <button
               onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
               className={`px-2 md:px-3 py-2 rounded text-xs font-bold uppercase ${darkMode ? "bg-white/10 hover:bg-white/20" : "bg-gray-200 hover:bg-gray-300"} transition-colors flex items-center gap-1`}
@@ -283,7 +299,6 @@ export default function GTA6Portfolio() {
               {language === "pt" ? "EN" : "PT"}
             </button>
 
-            {/* WhatsApp — texto reduzido no mobile */}
             <a
               href="https://wa.me/5585996056772"
               target="_blank"
@@ -294,7 +309,6 @@ export default function GTA6Portfolio() {
               <span className="md:hidden">WA</span>
             </a>
 
-            {/* CV */}
             <a
               href="/Currículo Bruno Faria.pdf"
               download
@@ -307,13 +321,12 @@ export default function GTA6Portfolio() {
         </div>
       </nav>
 
-      {/* ─── HERO ─── sem alteração visual, só mantém text-white fixo ── */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070)",
+              "ur[](https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `scale(${1 + scrollY * 0.0005})`,
@@ -354,7 +367,6 @@ export default function GTA6Portfolio() {
         </div>
       </section>
 
-      {/* ─── ABOUT ─── sem alteração ── */}
       <section
         className={`relative ${darkMode ? "bg-black border-white/5" : "bg-white border-gray-200"} py-32 overflow-hidden border-y`}
       >
@@ -406,11 +418,6 @@ export default function GTA6Portfolio() {
         </div>
       </section>
 
-      {/* ─── CARREIRA ───────────────────────────────────────────────────
-          DESKTOP: grid-cols-12, sticky, space-y-40 — IDÊNTICO ao original
-          MOBILE:  layout em coluna simples, sem sticky, títulos menores,
-                   espaçamentos reduzidos
-      ─────────────────────────────────────────────────────────────── */}
       <section
         id="experiencia"
         className={`py-16 md:py-32 ${darkMode ? "bg-[#050505]" : "bg-gray-100"}`}
@@ -424,9 +431,7 @@ export default function GTA6Portfolio() {
           </div>
 
           <div className="space-y-16 md:space-y-40">
-            {/* ── DIVEN ── */}
             <div className="grid lg:grid-cols-12 gap-6 md:gap-12 items-start">
-              {/* Info — no mobile vem primeiro e SEM sticky */}
               <div className="lg:col-span-5 lg:sticky lg:top-32">
                 <span className="text-pink-500 font-mono font-bold text-sm md:text-base">
                   SET 2024 — OUT 2025
@@ -490,7 +495,6 @@ export default function GTA6Portfolio() {
               </div>
             </div>
 
-            {/* ── DEWAY ── */}
             <div
               className={`grid lg:grid-cols-12 gap-6 md:gap-12 items-start pt-10 md:pt-20 border-t ${darkMode ? "border-white/5" : "border-gray-300"}`}
             >
@@ -545,7 +549,6 @@ export default function GTA6Portfolio() {
               </div>
             </div>
 
-            {/* ── DMUZA ── */}
             <div
               className={`grid lg:grid-cols-12 gap-6 md:gap-12 items-start pt-10 md:pt-20 border-t ${darkMode ? "border-white/5" : "border-gray-300"}`}
             >
@@ -606,7 +609,6 @@ export default function GTA6Portfolio() {
               </div>
             </div>
 
-            {/* ── MUZIE ── */}
             <div
               className={`grid lg:grid-cols-12 gap-6 md:gap-12 items-start pt-10 md:pt-20 border-t ${darkMode ? "border-white/5" : "border-gray-300"}`}
             >
@@ -668,7 +670,6 @@ export default function GTA6Portfolio() {
               </div>
             </div>
 
-            {/* ── KENZIE ── */}
             <div
               className={`grid lg:grid-cols-12 gap-6 md:gap-12 items-start pt-10 md:pt-20 border-t ${darkMode ? "border-white/5" : "border-gray-300"}`}
             >
@@ -733,55 +734,6 @@ export default function GTA6Portfolio() {
         </div>
       </section>
 
-      {/* ─── SKILLS ─── sem alteração visual ── */}
-      <section
-        id="skills"
-        className={`py-32 ${darkMode ? "bg-black" : "bg-white"}`}
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <h2
-            className={`text-8xl font-black italic tracking-tighter mb-20 text-center ${darkMode ? "opacity-10" : "opacity-20"}`}
-          >
-            {t.skills.title}
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { name: "Vue.js", color: "border-green-500 text-green-500" },
-              { name: "React.js", color: "border-blue-400 text-blue-400" },
-              {
-                name: "Next.js",
-                color: darkMode
-                  ? "border-white text-white"
-                  : "border-gray-900 text-gray-900",
-              },
-              {
-                name: "React Native",
-                color: "border-purple-400 text-purple-400",
-              },
-              { name: "TypeScript", color: "border-blue-600 text-blue-600" },
-              { name: "Tailwind", color: "border-cyan-400 text-cyan-400" },
-              {
-                name: "WebSockets",
-                color: "border-yellow-500 text-yellow-500",
-              },
-              { name: "Node.js", color: "border-green-600 text-green-600" },
-              { name: "Firebase", color: "border-orange-500 text-orange-500" },
-            ].map((skill) => (
-              <motion.div
-                key={skill.name}
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                className={`p-8 md:p-10 border-2 ${skill.color} ${darkMode ? "bg-white/5" : "bg-white/80"} backdrop-blur-sm flex items-center justify-center gap-3 md:gap-4 transition-all rounded-sm`}
-              >
-                <div className="font-black italic text-xl md:text-2xl tracking-tighter uppercase text-center">
-                  {skill.name}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PROJETOS ─── sem alteração visual ── */}
       <section
         id="projetos"
         className={`py-32 ${darkMode ? "bg-[#0a0a0a]" : "bg-gray-50"} border-t ${darkMode ? "border-white/5" : "border-gray-200"}`}
@@ -795,66 +747,63 @@ export default function GTA6Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "MyWay Flats",
-                desc:
-                  language === "pt"
-                    ? "Plataforma web completa para gestão de apartamentos de temporada, com site público de reservas, pagamento online via cartão e PIX e sincronização automática com Airbnb e Booking via iCal.\n\nPainel administrativo com gestão financeira, relatórios em PDF/Excel e controle de disponibilidade em tempo real.\n\nTecnologias utilizadas: React, TypeScript, Tailwind CSS, Node.js, Express, Prisma ORM, PostgreSQL, Stripe, Resend e deploy em produção na plataforma Render."
-                    : "Full-stack vacation rental management platform with a public booking site, online payments via card and PIX and automatic sync with Airbnb and Booking via iCal. \n\nAdmin dashboard with financial management, PDF/Excel reports, and real-time availability control. \n\nTechnologies used: React, TypeScript, Tailwind CSS, Node.js, Express, Prisma ORM, PostgreSQL, Stripe, Resend, and production deployment on the Render platform.",
-                img: myway,
-                link: "https://the-flat-finder.onrender.com/",
-              },
-              {
-                title: "BlitzBee",
-                desc:
-                  language === "pt"
-                    ? "Rede social completa, onde você pode criar sua conta, postar fotos, curtir, comentar e seguir outras pessoas. Possui um feed exclusivo com publicações de quem você segue e uma área interativa que destaca os posts mais populares da plataforma. \n\nTecnologias utilizadas: Next.js, Tailwind, Firebase"
-                    : "Complete social network where you can create an account, post photos, like, comment, and follow other users. It features a personalized feed with posts from people you follow and an interactive section highlighting the most popular posts on the platform. \n\nTechnologies used: Next.js, Tailwind, Firebase",
-                img: blitzbee,
-                link: "https://blitzbee-l2hxtxh1n-brunofaria93.vercel.app/",
-              },
-              {
-                title: "Pokédex",
-                desc:
-                  language === "pt"
-                    ? "Aplicação simples de Pokédex que utiliza a PokéAPI para buscar e exibir Pokémon, mostrando imagens, tipos e informações básicas em uma interface interativa.\n\nTecnologias utilizadas: React, React Router, Tailwind CSS e PokéAPI."
-                    : "Simple Pokédex application that uses the PokéAPI to fetch and display Pokémon, showing images, types and basic information in an interactive interface.\n\nTechnologies used: React, React Router, Tailwind CSS and PokéAPI.",
-                img: poke,
-                link: "https://pokedex-eosin-two.vercel.app/",
-              },
-            ].map((project, i) => (
-              <a
-                key={i}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group block overflow-hidden rounded-sm border ${darkMode ? "border-white/10 hover:border-pink-500/50" : "border-gray-200 hover:border-pink-500"} transition-all duration-300 ${darkMode ? "bg-white/5" : "bg-white"}`}
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-black italic tracking-tight mb-2 group-hover:text-pink-500 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p
-                    className={`${darkMode ? "text-gray-400" : "text-gray-600"} text-sm whitespace-pre-line`}
-                  >
-                    {project.desc}
-                  </p>
-                </div>
-              </a>
-            ))}
+            {projects.map((project, i) =>
+              project.internalLink ? (
+                <Link
+                  key={i}
+                  to={project.internalLink}
+                  className={`group block overflow-hidden rounded-sm border ${darkMode ? "border-white/10 hover:border-pink-500/50" : "border-gray-200 hover:border-pink-500"} transition-all duration-300 ${darkMode ? "bg-white/5" : "bg-white"}`}
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-xl font-black italic tracking-tight mb-2 group-hover:text-pink-500 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p
+                      className={`${darkMode ? "text-gray-400" : "text-gray-600"} text-sm whitespace-pre-line`}
+                    >
+                      {project.desc}
+                    </p>
+                  </div>
+                </Link>
+              ) : (
+                <a
+                  key={i}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group block overflow-hidden rounded-sm border ${darkMode ? "border-white/10 hover:border-pink-500/50" : "border-gray-200 hover:border-pink-500"} transition-all duration-300 ${darkMode ? "bg-white/5" : "bg-white"}`}
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-xl font-black italic tracking-tight mb-2 group-hover:text-pink-500 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p
+                      className={`${darkMode ? "text-gray-400" : "text-gray-600"} text-sm whitespace-pre-line`}
+                    >
+                      {project.desc}
+                    </p>
+                  </div>
+                </a>
+              ),
+            )}
           </div>
         </div>
       </section>
 
-      {/* ─── EDUCAÇÃO ─── sem alteração visual ── */}
       <section
         id="formacao"
         className={`py-32 ${darkMode ? "bg-[#0a0a0a]" : "bg-gray-50"} border-t ${darkMode ? "border-white/5" : "border-gray-200"}`}
@@ -931,7 +880,53 @@ export default function GTA6Portfolio() {
         </div>
       </section>
 
-      {/* ─── FOOTER ─── sem alteração visual ── */}
+      <section
+        id="skills"
+        className={`py-32 ${darkMode ? "bg-black" : "bg-white"}`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <h2
+            className={`text-8xl font-black italic tracking-tighter mb-20 text-center ${darkMode ? "opacity-10" : "opacity-20"}`}
+          >
+            {t.skills.title}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { name: "Vue.js", color: "border-green-500 text-green-500" },
+              { name: "React.js", color: "border-blue-400 text-blue-400" },
+              {
+                name: "Next.js",
+                color: darkMode
+                  ? "border-white text-white"
+                  : "border-gray-900 text-gray-900",
+              },
+              {
+                name: "React Native",
+                color: "border-purple-400 text-purple-400",
+              },
+              { name: "TypeScript", color: "border-blue-600 text-blue-600" },
+              { name: "Tailwind", color: "border-cyan-400 text-cyan-400" },
+              {
+                name: "WebSockets",
+                color: "border-yellow-500 text-yellow-500",
+              },
+              { name: "Node.js", color: "border-green-600 text-green-600" },
+              { name: "Firebase", color: "border-orange-500 text-orange-500" },
+            ].map((skill) => (
+              <motion.div
+                key={skill.name}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                className={`p-8 md:p-10 border-2 ${skill.color} ${darkMode ? "bg-white/5" : "bg-white/80"} backdrop-blur-sm flex items-center justify-center gap-3 md:gap-4 transition-all rounded-sm`}
+              >
+                <div className="font-black italic text-xl md:text-2xl tracking-tighter uppercase text-center">
+                  {skill.name}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <footer
         className={`py-20 md:py-32 ${darkMode ? "bg-black text-white border-pink-600/50" : "bg-white text-gray-900 border-pink-500"} border-t-4`}
       >
@@ -992,5 +987,34 @@ export default function GTA6Portfolio() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function GTA6Portfolio() {
+  const [darkMode, setDarkMode] = useState(true);
+  const [language, setLanguage] = useState("pt");
+
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <PortfolioHome
+            darkMode={darkMode}
+            language={language}
+            setDarkMode={setDarkMode}
+            setLanguage={setLanguage}
+          />
+        }
+      />
+      <Route
+        path="/projeto/sneakpeek"
+        element={<ProjectSneakPeek darkMode={darkMode} language={language} />}
+      />
+      <Route
+        path="/projeto/myway"
+        element={<ProjectMyWay darkMode={darkMode} />}
+      />
+    </Routes>
   );
 }
