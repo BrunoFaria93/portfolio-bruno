@@ -95,7 +95,7 @@ export default function ProjectLayout({ project, darkMode }) {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-screen flex items-end overflow-hidden pt-16">
+      <section className="relative min-h-screen flex items-end overflow-hidden pt-16">
         <div
           className="absolute inset-0 z-0"
           style={{
