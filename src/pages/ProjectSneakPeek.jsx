@@ -262,20 +262,21 @@ export async function getPrivateSignedUrl(key: string) {
         filename: "lib/watermark.ts",
         explanation:
           language === "pt"
-            ? "O @nick do assinante é gravado no canvas antes do upload. Se o conteúdo vazar, dá pra identificar quem vazou. A posição e opacidade são sutis o suficiente pra não atrapalhar a experiência."
-            : "The subscriber's @nick is embedded in the canvas before upload. If the content leaks, it's possible to identify who leaked it. The position and opacity are subtle enough not to interfere with the experience.",
-        code: `const fontSize = 36;
+            ? "Duas camadas de proteção: no upload, a imagem é normalizada para 9:16 e recebe o logo da plataforma gravado permanentemente. Na visualização, o @nick de quem está assistindo é sobreposto via canvas/SVG em tempo real — se o conteúdo vazar, dá pra identificar quem gravou a tela."
+            : "Two protection layers: on upload, the image is normalized to 9:16 and gets the platform logo permanently embedded. At view time, the @nick of whoever is watching is overlaid via canvas/SVG in real time — if content leaks, you can identify who screen-recorded it.",
+        code: `// 1. Upload — logo da plataforma gravado permanentemente na imagem
 const text = "● Sneak Peek";
-
-// Sobrepõe marca d'água com opacidade baixa
 ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
 ctx.font = \`bold \${fontSize}px sans-serif\`;
 ctx.fillText(text, boxX + boxPad, boxY + boxPad);
 
-// Normaliza para 9:16 independente da orientação do celular
-const scale = naturalW > naturalH
-  ? Math.min(TARGET_W / naturalW, TARGET_H / naturalH)  // landscape: contain
-  : Math.max(TARGET_W / naturalW, TARGET_H / naturalH); // portrait: cover`,
+// 2. Visualização — @nick de quem assiste, sobreposto no frontend
+const svg = \`<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'>
+  <text fill='rgba(255,255,255,0.1)' transform='rotate(-35, 110, 110)'>
+    @\${profile.nick}
+  </text>
+</svg>\`;
+// repetido como background-image — se vazar, identifica quem gravou`,
       },
     ],
     stack: [
