@@ -108,7 +108,7 @@ export default function ProjectLayout({ project, darkMode }) {
               : "brightness(0.4) contrast(1.1)",
           }}
         />
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-8 md:pb-16">
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {tags?.map((tag) => (
@@ -134,7 +134,7 @@ export default function ProjectLayout({ project, darkMode }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg md:text-2xl text-gray-300 max-w-2xl font-medium leading-snug"
+            className="text-sm md:text-2xl text-gray-300 max-w-2xl font-medium leading-snug"
           >
             {subtitle}
           </motion.p>
@@ -145,7 +145,7 @@ export default function ProjectLayout({ project, darkMode }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-8 mt-10"
+              className="flex flex-wrap gap-4 md:gap-8 mt-6 md:mt-10"
             >
               {stats.map((s) => (
                 <div key={s.label}>

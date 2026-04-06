@@ -1013,7 +1013,7 @@ export default function GTA6Portfolio() {
       />
       <Route
         path="/projeto/myway"
-        element={<ProjectMyWay darkMode={darkMode} />}
+        element={<ProjectMyWay darkMode={darkMode} language={language} />}
       />
     </Routes>
   );
